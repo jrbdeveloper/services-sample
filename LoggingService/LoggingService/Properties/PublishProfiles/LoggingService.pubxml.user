@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\Projects\Tests\Deployments\LoggingService</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="App_Data/Logs.mdf">
+      <publishTime>05/14/2016 13:13:05</publishTime>
+    </File>
+    <File Include="App_Data/Logs_log.ldf">
+      <publishTime>05/14/2016 15:53:29</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>05/14/2016 11:49:55</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.pdb">
+      <publishTime>05/14/2016 11:49:55</publishTime>
+    </File>
+    <File Include="bin/App_Data/Logs.mdf">
+      <publishTime>05/14/2016 15:53:29</publishTime>
+    </File>
+    <File Include="bin/App_Data/Logs_log.ldf">
+      <publishTime>05/14/2016 15:53:29</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>05/14/2016 12:40:09</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>05/14/2016 12:40:09</publishTime>
+    </File>
+    <File Include="bin/log4net.dll">
+      <publishTime>05/14/2016 12:07:45</publishTime>
+    </File>
+    <File Include="bin/LoggingService.dll">
+      <publishTime>05/14/2016 16:03:53</publishTime>
+    </File>
+    <File Include="bin/LoggingService.pdb">
+      <publishTime>05/14/2016 16:03:53</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>05/14/2016 11:49:56</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>05/14/2016 11:49:53</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>05/14/2016 11:49:50</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>05/14/2016 11:49:55</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>05/14/2016 11:49:55</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>05/14/2016 11:49:55</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>05/14/2016 11:49:55</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>05/14/2016 11:49:55</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>05/14/2016 11:49:55</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>05/14/2016 11:49:55</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>05/14/2016 11:49:55</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>05/14/2016 11:49:55</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>05/14/2016 11:49:55</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>05/14/2016 11:49:55</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>05/14/2016 11:49:55</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>05/14/2016 11:49:53</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>05/14/2016 11:49:53</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>05/14/2016 11:49:54</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>05/14/2016 11:49:54</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>05/14/2016 11:49:53</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>05/14/2016 11:49:53</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>05/14/2016 11:49:53</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>05/14/2016 11:49:53</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>05/14/2016 11:49:53</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>05/14/2016 11:49:53</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>05/14/2016 11:49:55</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>05/14/2016 11:49:48</publishTime>
+    </File>
+    <File Include="Models/LoggerModel.edmx.diagram">
+      <publishTime>05/14/2016 15:53:22</publishTime>
+    </File>
+    <File Include="Models/LoggingModel.edmx.diagram">
+      <publishTime>05/14/2016 12:46:43</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>05/14/2016 12:40:10</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>05/14/2016 15:54:11</publishTime>
+    </File>
+  </ItemGroup>
+</Project>
