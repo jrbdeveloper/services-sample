@@ -16,10 +16,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/25/2016 21:16:16</publishTime>
     </File>
     <File Include="bin/ClientManager.dll">
-      <publishTime>05/15/2016 23:29:48</publishTime>
+      <publishTime>05/16/2016 08:06:12</publishTime>
     </File>
     <File Include="bin/ClientManager.pdb">
-      <publishTime>05/15/2016 23:29:48</publishTime>
+      <publishTime>05/16/2016 08:06:12</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>04/25/2016 21:16:17</publishTime>

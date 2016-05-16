@@ -133,6 +133,7 @@
     <Compile Include="Models\AddressService.cs" />
     <Compile Include="Models\ClientService.cs" />
     <Compile Include="Models\LoggingService.cs" />
+    <Compile Include="Models\MatchingService.cs" />
     <Compile Include="Models\PropertyService.cs" />
     <Compile Include="Models\ServiceBase.cs" />
     <Compile Include="Models\ServiceFactory.cs" />

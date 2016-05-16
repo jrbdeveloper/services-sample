@@ -89,3 +89,4 @@ D:\Projects\Tests\ServicesService\ServicesService\bin\System.Web.WebPages.Razor.
 D:\Projects\Tests\ServicesService\ServicesService\bin\Antlr3.Runtime.pdb
 D:\Projects\Tests\ServicesService\ServicesService\obj\Debug\ServicesService.dll
 D:\Projects\Tests\ServicesService\ServicesService\obj\Debug\ServicesService.pdb
+D:\Projects\Tests\ServicesService\ServicesService\obj\Debug\ServicesService.csprojResolveAssemblyReference.cache
