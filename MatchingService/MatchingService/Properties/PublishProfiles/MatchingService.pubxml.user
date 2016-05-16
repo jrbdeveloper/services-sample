@@ -22,10 +22,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/15/2016 23:40:26</publishTime>
     </File>
     <File Include="bin/MatchingService.dll">
-      <publishTime>05/15/2016 23:44:26</publishTime>
+      <publishTime>05/15/2016 23:47:21</publishTime>
     </File>
     <File Include="bin/MatchingService.pdb">
-      <publishTime>05/15/2016 23:44:26</publishTime>
+      <publishTime>05/15/2016 23:47:21</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>05/15/2016 22:25:01</publishTime>
