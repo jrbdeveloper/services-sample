@@ -6,9 +6,6 @@
 
 <h2>Clients</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-success" })
-</p>
 <table class="table">
     <tr>       
         <th>
@@ -20,7 +17,9 @@
         <th>
             @Html.DisplayNameFor(model => model.EmailAddress)
         </th>
-        <th></th>
+        <th>
+            @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-success btn-sm col-md-6" })
+        </th>
     </tr>
 
 @foreach (var item in Model) {

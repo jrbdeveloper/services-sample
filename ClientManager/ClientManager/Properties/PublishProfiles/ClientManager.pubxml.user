@@ -16,10 +16,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/25/2016 21:16:16</publishTime>
     </File>
     <File Include="bin/ClientManager.dll">
-      <publishTime>05/14/2016 21:32:56</publishTime>
+      <publishTime>05/15/2016 21:26:39</publishTime>
     </File>
     <File Include="bin/ClientManager.pdb">
-      <publishTime>05/14/2016 21:32:56</publishTime>
+      <publishTime>05/15/2016 21:26:39</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>04/25/2016 21:16:17</publishTime>
@@ -163,16 +163,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/03/2016 07:49:23</publishTime>
     </File>
     <File Include="Views/Clients/Create.cshtml">
-      <publishTime>05/14/2016 21:02:40</publishTime>
+      <publishTime>05/15/2016 21:40:15</publishTime>
     </File>
     <File Include="Views/Clients/Details.cshtml">
       <publishTime>05/14/2016 21:04:14</publishTime>
     </File>
     <File Include="Views/Clients/Edit.cshtml">
-      <publishTime>05/14/2016 21:01:46</publishTime>
+      <publishTime>05/15/2016 21:40:07</publishTime>
     </File>
     <File Include="Views/Clients/Index.cshtml">
-      <publishTime>05/14/2016 21:12:04</publishTime>
+      <publishTime>05/15/2016 21:32:50</publishTime>
     </File>
     <File Include="Views/Home/About.cshtml">
       <publishTime>04/25/2016 21:16:12</publishTime>
@@ -184,16 +184,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/25/2016 21:16:12</publishTime>
     </File>
     <File Include="Views/Property/Create.cshtml">
-      <publishTime>05/14/2016 21:07:02</publishTime>
+      <publishTime>05/15/2016 21:42:04</publishTime>
     </File>
     <File Include="Views/Property/Details.cshtml">
       <publishTime>05/14/2016 21:06:24</publishTime>
     </File>
     <File Include="Views/Property/Edit.cshtml">
-      <publishTime>05/14/2016 21:05:43</publishTime>
+      <publishTime>05/15/2016 21:42:14</publishTime>
     </File>
     <File Include="Views/Property/Index.cshtml">
-      <publishTime>05/14/2016 21:13:04</publishTime>
+      <publishTime>05/15/2016 21:33:55</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>04/25/2016 21:16:12</publishTime>

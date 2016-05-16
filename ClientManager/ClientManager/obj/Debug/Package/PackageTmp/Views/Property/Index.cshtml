@@ -6,9 +6,6 @@
 
 <h2>Properties</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create", null, new { @class= "btn btn-success" })
-</p>
 <table class="table">
     <tr>
         <th>
@@ -29,7 +26,9 @@
         <th>
             @Html.DisplayNameFor(model => model.SquareFootage)
         </th>
-        <th></th>
+        <th>
+            @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-success btn-sm col-md-7" })
+        </th>
     </tr>
 
 @foreach (var item in Model) {

@@ -138,7 +138,6 @@ namespace ClientManager.Helpers
                 if (responseMessage.IsSuccessStatusCode)
                 {
                     var responseData = responseMessage.Content.ReadAsStringAsync().GetAwaiter().GetResult();
-
                     var item = JsonConvert.DeserializeObject<string>(responseData);
 
                     return (value.HasValue) ? item + value : item;                  
@@ -156,7 +155,6 @@ namespace ClientManager.Helpers
                 if (responseMessage.IsSuccessStatusCode)
                 {
                     var responseData = responseMessage.Content.ReadAsStringAsync().GetAwaiter().GetResult();
-
                     var item = JsonConvert.DeserializeObject<string>(responseData);
 
                     return (!string.IsNullOrEmpty(value)) ? item + value : item;
