@@ -1,85 +1,37 @@
-﻿using System.Web.Mvc;
+﻿using ClientManager.Helpers;
+using ClientManager.Models;
+using System;
+using System.Web.Mvc;
 
 namespace ClientManager.Controllers
 {
     public class MatchingController : BaseController
     {
-        // GET: Matching
         public ActionResult Index()
         {
-            return View();
+            var list = Service.GetList<MatchingModel>(Service.Get(Services.Matching).Uri());
+            return View(list);
         }
 
-        // GET: Matching/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            return View(GetMatchingById(id));
         }
 
-        // GET: Matching/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Matching/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        private MatchingModel GetMatchingById(int id)
         {
             try
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                var matching = Service.GetItem<MatchingModel>(Service.Get(Services.Matching).Uri(id));
+                
+                return matching;
             }
-            catch
+            catch (Exception ex)
             {
-                return View();
+                Service.LogException(ex);
             }
-        }
 
-        // GET: Matching/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Matching/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Matching/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Matching/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return new MatchingModel();
         }
     }
 }

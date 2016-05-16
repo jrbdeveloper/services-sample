@@ -37,4 +37,3 @@ D:\Projects\Tests\ClientManager\ClientManager\bin\Antlr3.Runtime.pdb
 D:\Projects\Tests\ClientManager\ClientManager\bin\Newtonsoft.Json.xml
 D:\Projects\Tests\ClientManager\ClientManager\obj\Debug\ClientManager.dll
 D:\Projects\Tests\ClientManager\ClientManager\obj\Debug\ClientManager.pdb
-D:\Projects\Tests\ClientManager\ClientManager\obj\Debug\ClientManager.csprojResolveAssemblyReference.cache
