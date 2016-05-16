@@ -31,7 +31,7 @@ namespace ServicesService.Models
             get { return _configuration["api"].ToString(); }
         }
 
-        public string BaseUri()
+        public string Uri()
         {
             var returnValue = new StringBuilder();
             returnValue.Append(Base);

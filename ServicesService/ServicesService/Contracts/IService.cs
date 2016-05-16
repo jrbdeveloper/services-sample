@@ -2,7 +2,7 @@
 {
     public interface IService
     {
-        string BaseUri();
+        string Uri();
 
         bool CheckHealth();
     }

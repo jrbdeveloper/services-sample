@@ -8,7 +8,7 @@ namespace ServicesService.Controllers
         // GET: api/Services/5
         public string Get(string id)
         {
-            return Service.Get(id).BaseUri();
+            return Service.Get(id).Uri();
         }
     }
 }
