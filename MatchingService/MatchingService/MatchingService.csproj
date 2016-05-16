@@ -138,6 +138,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Service.cs" />
+    <Compile Include="Models\AuditModel.cs" />
+    <Compile Include="Models\ExceptionModel.cs" />
     <Compile Include="Models\Matching.cs">
       <DependentUpon>MatchingModel.tt</DependentUpon>
     </Compile>

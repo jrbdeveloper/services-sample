@@ -1,14 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using MatchingService.Models;
+using MatchingService.Helpers;
+using Newtonsoft.Json;
 
 namespace MatchingService.Controllers
 {
@@ -26,79 +25,123 @@ namespace MatchingService.Controllers
         [ResponseType(typeof(Matching))]
         public IHttpActionResult GetMatching(int id)
         {
-            Matching matching = db.Matchings.Find(id);
-            if (matching == null)
+            try
             {
-                return NotFound();
+                Matching matching = db.Matchings.Find(id);
+                if (matching == null)
+                {
+                    return NotFound();
+                }
+
+                Service.LogAudit<Matching>(string.Format("api/Matching/{0}", id), JsonConvert.SerializeObject(matching), "GetMatching");
+
+                return Ok(matching);
+            }
+            catch(Exception ex)
+            {
+                Service.LogException(ex);
             }
 
-            return Ok(matching);
+            return NotFound();            
         }
 
         // PUT: api/Matching/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutMatching(int id, Matching matching)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            if (id != matching.MatchingId)
-            {
-                return BadRequest();
-            }
-
-            db.Entry(matching).State = EntityState.Modified;
-
             try
             {
-                db.SaveChanges();
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+
+                if (id != matching.MatchingId)
+                {
+                    return BadRequest();
+                }
+
+                db.Entry(matching).State = EntityState.Modified;
+
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!MatchingExists(id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+
+                Service.LogAudit<Matching>(string.Format("api/Matching/{0}", id), JsonConvert.SerializeObject(matching), "PutMatching");
+
+                return StatusCode(HttpStatusCode.NoContent);
             }
-            catch (DbUpdateConcurrencyException)
+            catch(Exception ex)
             {
-                if (!MatchingExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                Service.LogException(ex);
             }
 
-            return StatusCode(HttpStatusCode.NoContent);
+            return NotFound();
         }
 
         // POST: api/Matching
         [ResponseType(typeof(Matching))]
         public IHttpActionResult PostMatching(Matching matching)
         {
-            if (!ModelState.IsValid)
+            try
             {
-                return BadRequest(ModelState);
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+
+                db.Matchings.Add(matching);
+                db.SaveChanges();
+
+                Service.LogAudit<Matching>("api/Matching", JsonConvert.SerializeObject(matching), "PostMatching");
+
+                return CreatedAtRoute("DefaultApi", new { id = matching.MatchingId }, matching);
+            }
+            catch(Exception ex)
+            {
+                Service.LogException(ex);
             }
 
-            db.Matchings.Add(matching);
-            db.SaveChanges();
-
-            return CreatedAtRoute("DefaultApi", new { id = matching.MatchingId }, matching);
+            return NotFound();
         }
 
         // DELETE: api/Matching/5
         [ResponseType(typeof(Matching))]
         public IHttpActionResult DeleteMatching(int id)
         {
-            Matching matching = db.Matchings.Find(id);
-            if (matching == null)
+            try
             {
-                return NotFound();
+                Matching matching = db.Matchings.Find(id);
+                if (matching == null)
+                {
+                    return NotFound();
+                }
+
+                db.Matchings.Remove(matching);
+                db.SaveChanges();
+
+                Service.LogAudit<Matching>(string.Format("api/Matching/{0}", id), JsonConvert.SerializeObject(matching), "DeleteMatching");
+
+                return Ok(matching);
+            }
+            catch(Exception ex)
+            {
+                Service.LogException(ex);
             }
 
-            db.Matchings.Remove(matching);
-            db.SaveChanges();
-
-            return Ok(matching);
+            return NotFound();
         }
 
         protected override void Dispose(bool disposing)
