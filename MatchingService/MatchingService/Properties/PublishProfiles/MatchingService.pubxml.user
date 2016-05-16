@@ -15,11 +15,17 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/Antlr3.Runtime.pdb">
       <publishTime>05/15/2016 22:25:00</publishTime>
     </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>05/15/2016 23:40:26</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>05/15/2016 23:40:26</publishTime>
+    </File>
     <File Include="bin/MatchingService.dll">
-      <publishTime>05/15/2016 22:29:43</publishTime>
+      <publishTime>05/15/2016 23:44:26</publishTime>
     </File>
     <File Include="bin/MatchingService.pdb">
-      <publishTime>05/15/2016 22:29:43</publishTime>
+      <publishTime>05/15/2016 23:44:26</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>05/15/2016 22:25:01</publishTime>
@@ -102,11 +108,14 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Global.asax">
       <publishTime>05/15/2016 22:24:53</publishTime>
     </File>
+    <File Include="Models/MatchingModel.edmx.diagram">
+      <publishTime>05/15/2016 23:42:27</publishTime>
+    </File>
     <File Include="packages.config">
-      <publishTime>05/15/2016 22:25:01</publishTime>
+      <publishTime>05/15/2016 23:40:27</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>05/15/2016 22:29:44</publishTime>
+      <publishTime>05/15/2016 23:44:34</publishTime>
     </File>
   </ItemGroup>
 </Project>

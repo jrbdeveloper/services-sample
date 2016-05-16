@@ -44,3 +44,7 @@ D:\Projects\Tests\MatchingService\MatchingService\bin\Antlr3.Runtime.pdb
 D:\Projects\Tests\MatchingService\MatchingService\obj\Debug\MatchingService.csprojResolveAssemblyReference.cache
 D:\Projects\Tests\MatchingService\MatchingService\obj\Debug\MatchingService.dll
 D:\Projects\Tests\MatchingService\MatchingService\obj\Debug\MatchingService.pdb
+D:\Projects\Tests\MatchingService\MatchingService\bin\EntityFramework.dll
+D:\Projects\Tests\MatchingService\MatchingService\bin\EntityFramework.SqlServer.dll
+D:\Projects\Tests\MatchingService\MatchingService\bin\EntityFramework.xml
+D:\Projects\Tests\MatchingService\MatchingService\bin\EntityFramework.SqlServer.xml

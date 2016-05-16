@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using MatchingService.Models;
+using System.Web.Http;
 using System.Web.Mvc;
 
 namespace MatchingService.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : ApiController
     {
-        public ActionResult Index()
+        public JsonResult Index()
         {
-            ViewBag.Title = "Home Page";
-
-            return View();
+            return null;
+            //return Json<Matching>(new Matching());
         }
     }
 }
