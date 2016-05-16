@@ -3,11 +3,10 @@ using ServicesService.Contracts;
 
 namespace ServicesService.Models
 {
-    public class PropertyService : IService
+    public class PropertyService : ServiceBase, IService
     {
-        public string BaseUri()
+        public PropertyService() : base("Property")
         {
-            return "http://localhost:8084/api/Property/";
         }
 
         public bool CheckHealth()

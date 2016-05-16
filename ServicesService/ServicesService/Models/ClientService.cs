@@ -3,16 +3,15 @@ using ServicesService.Contracts;
 
 namespace ServicesService.Models
 {
-    public class ClientService : IService
+    public class ClientService : ServiceBase, IService
     {
+        public ClientService() : base("Client")
+        {
+        }
+
         public bool CheckHealth()
         {
             throw new NotImplementedException();
-        }
-
-        public string BaseUri()
-        {
-            return "http://localhost:8081/api/Clients/";
         }
     }
 }

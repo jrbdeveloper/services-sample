@@ -1,18 +1,17 @@
-﻿using ServicesService.Contracts;
-using System;
+﻿using System;
+using ServicesService.Contracts;
 
 namespace ServicesService.Models
 {
-    public class LoggingService : IService
+    public class LoggingService : ServiceBase, IService
     {
+        public LoggingService() : base("Logging")
+        {
+        }
+
         public bool CheckHealth()
         {
             throw new NotImplementedException();
-        }
-
-        public string BaseUri()
-        {
-            return "http://localhost:8085/api/Logger/";
         }
     }
 }
