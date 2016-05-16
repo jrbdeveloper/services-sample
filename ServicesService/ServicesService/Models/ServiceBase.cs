@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ServicesService.Models
 {
-    public class ServiceBase
+    public abstract class ServiceBase
     {
         private Hashtable _configuration;
 

@@ -135,7 +135,6 @@
     <Compile Include="Models\LoggingService.cs" />
     <Compile Include="Models\PropertyService.cs" />
     <Compile Include="Models\ServiceBase.cs" />
-    <Compile Include="Models\ServiceConfigurations.cs" />
     <Compile Include="Models\ServiceFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
