@@ -2,7 +2,7 @@
 
 namespace ClientManager.Controllers
 {
-    public class MatchingController : Controller
+    public class MatchingController : BaseController
     {
         // GET: Matching
         public ActionResult Index()

@@ -7,9 +7,50 @@ using System.Text;
 
 namespace ClientManager.Helpers
 {
+    public enum Services
+    {
+        Client,
+        Address,
+        Property,
+        Logger,
+        Matching
+    }
+
     public class Service
     {
         private static string _service;
+
+        public static Service Get(Services service)
+        {
+            switch (service)
+            {
+                case Services.Client:
+                    _service = "client";
+                    break;
+
+                case Services.Address:
+                    _service = "address";
+                    break;
+
+                case Services.Property:
+                    _service = "property";
+                    break;
+
+                case Services.Logger:
+                    _service = "logger";
+                    break;
+
+                case Services.Matching:
+                    _service = "matching";
+                    break;
+
+                default:
+                    _service = "client";
+                    break;
+            }
+
+            return new Service();
+        }
 
         public static List<T> GetList<T>(string uri)
         {
@@ -168,35 +209,7 @@ namespace ClientManager.Helpers
         {
             return Get(service);
         }
-
-        public static Service Get(Services service)
-        {
-            switch (service)
-            {
-                case Services.Client:
-                    _service = "client";
-                    break;
-
-                case Services.Address:
-                    _service = "address";
-                    break;
-
-                case Services.Property:
-                    _service = "property";
-                    break;
-
-                  case Services.Logger:
-                    _service = "logger";
-                    break;
-
-                default:
-                    _service = "client";
-                    break;
-            }
-
-            return new Service();
-        }
-
+        
         public static void LogException(Exception ex)
         {
             var exception = Post(Make(Services.Logger).Call("postException"), new ExceptionModel
@@ -221,13 +234,5 @@ namespace ClientManager.Helpers
                 Date = DateTime.Now
             });
         }
-    }
-
-    public enum Services
-    {
-        Client,
-        Address,
-        Property,
-        Logger
     }
 }

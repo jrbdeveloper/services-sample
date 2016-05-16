@@ -19,6 +19,9 @@ namespace ServicesService.Models
                 case "logger":
                     return new LoggingService();
 
+                case "matching":
+                    return new MatchingService();
+
                 default:
                     return new ClientService();
             }
