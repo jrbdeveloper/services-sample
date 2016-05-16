@@ -1,6 +1,6 @@
 ﻿namespace ClientManager.Models
 {
-    public class MatchModel
+    public class MatchingModel
     {
         public ClientModel Client { get; set; }
 
