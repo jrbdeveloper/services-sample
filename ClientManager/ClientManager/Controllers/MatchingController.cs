@@ -35,6 +35,8 @@ namespace ClientManager.Controllers
             try
             {
                 var matching = Service.GetItem<MatchingModel>(Service.Get(Services.Matching).Uri(id));
+                matching.Client = GetClientById(matching.ClientId);
+                matching.Property = GetPropertyById(matching.PropertyId);
                 
                 return matching;
             }
