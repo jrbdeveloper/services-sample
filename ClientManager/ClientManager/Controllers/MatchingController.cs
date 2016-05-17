@@ -1,6 +1,7 @@
 ﻿using ClientManager.Helpers;
 using ClientManager.Models;
 using System;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace ClientManager.Controllers
@@ -9,7 +10,13 @@ namespace ClientManager.Controllers
     {
         public ActionResult Index()
         {
-            var list = Service.GetList<MatchingModel>(Service.Get(Services.Matching).Uri());
+            var list = from item in Service.GetList<MatchingModel>(Service.Get(Services.Matching).Uri())
+                       select new MatchingModel
+                       {
+                           Client = GetClientById(item.ClientId),
+                           Property = GetPropertyById(item.PropertyId)
+                       };
+
             return View(list);
         }
 
