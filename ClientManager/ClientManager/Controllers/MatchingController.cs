@@ -9,9 +9,13 @@ namespace ClientManager.Controllers
     {
         public ActionResult Index()
         {
-            var uri = Service.Get(Services.Matching).Uri();
-            var list = Service.GetList<MatchingModel>(uri);
+            var list = Service.GetList<MatchingModel>(Service.Get(Services.Matching).Uri());
             return View(list);
+        }
+
+        public ActionResult Create()
+        {
+            return View();
         }
 
         public ActionResult Details(int id)

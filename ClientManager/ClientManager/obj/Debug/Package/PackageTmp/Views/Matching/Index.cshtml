@@ -6,19 +6,24 @@
 
 <h2>Matchings</h2>
 
+
+
 <table class="table">
     <tr>
-        <th></th>
+        <th>Client Id</th>
+        <th>Property Id</th>
+        <th>@Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-success btn-sm col-md-3" })</th>
     </tr>
     @if (Model != null)
     {
         foreach (var item in Model)
         {
             <tr>
+                <td>@item.ClientId</td>
+                <td>@item.PropertyId</td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }, new { @class="btn btn-info" }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ }, new { @class = "btn btn-danger" })
                 </td>
             </tr>
         }

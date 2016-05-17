@@ -180,6 +180,7 @@
     <Content Include="Views\Property\Edit.cshtml" />
     <Content Include="Views\Matching\Index.cshtml" />
     <Content Include="Views\Matching\Details.cshtml" />
+    <Content Include="Views\Matching\Create.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
