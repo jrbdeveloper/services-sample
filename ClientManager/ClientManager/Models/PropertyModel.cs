@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Web;
 
 namespace ClientManager.Models
 {
@@ -24,5 +25,7 @@ namespace ClientManager.Models
 
         [Display(Name = "Square Footage")]
         public int? SquareFootage { get; set; }
+
+        public HttpPostedFileBase[] Photos { get; set; }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using ClientManager.Helpers;
 using ClientManager.Models;
+using System.IO;
+using System.Web;
 using System.Web.Mvc;
 
 namespace ClientManager.Controllers
@@ -65,6 +67,23 @@ namespace ClientManager.Controllers
             else
             {
                 property = Service.Post(Service.Get(Services.Property).Uri(), model);
+            }
+
+            if (model.Photos != null && model.Photos.Length > 0)
+            {
+                foreach (var file in model.Photos)
+                {
+                    // Verify that the user selected a file
+                    if (file != null && file.ContentLength > 0)
+                    {
+                        // extract only the filename
+                        var fileName = Path.GetFileName(file.FileName);
+
+                        // store the file inside ~/App_Data/uploads folder
+                        var path = Path.Combine(Server.MapPath("~/Uploads"), fileName);
+                        file.SaveAs(path);
+                    }
+                }
             }
 
             return RedirectToAction("Index", "Property");
