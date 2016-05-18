@@ -6,8 +6,6 @@
 
 <h2>Matchings</h2>
 
-
-
 <table class="table">
     <tr>
         <th>Client</th>
@@ -22,7 +20,7 @@
                 <td>@item.Client.Name</td>
                 <td>@item.Property.Name</td>
                 <td>
-                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }, new { @class="btn btn-info" }) |
+                    @Html.ActionLink("Details", "Details", new {  id=item.MatchingId  }, new { @class="btn btn-info" }) |
                     @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ }, new { @class = "btn btn-danger" })
                 </td>
             </tr>

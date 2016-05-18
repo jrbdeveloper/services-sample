@@ -13,6 +13,7 @@ namespace ClientManager.Controllers
             var list = from item in Service.GetList<MatchingModel>(Service.Get(Services.Matching).Uri())
                        select new MatchingModel
                        {
+                           MatchingId = item.MatchingId,
                            Client = GetClientById(item.ClientId),
                            Property = GetPropertyById(item.PropertyId)
                        };
