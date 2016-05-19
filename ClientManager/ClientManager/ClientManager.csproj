@@ -132,6 +132,7 @@
     <Compile Include="Models\AuditModel.cs" />
     <Compile Include="Models\ClientModel.cs" />
     <Compile Include="Models\ExceptionModel.cs" />
+    <Compile Include="Models\GalleryModel.cs" />
     <Compile Include="Models\MatchingModel.cs" />
     <Compile Include="Models\PropertyModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

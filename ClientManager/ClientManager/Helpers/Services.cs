@@ -13,7 +13,8 @@ namespace ClientManager.Helpers
         Address,
         Property,
         Logger,
-        Matching
+        Matching,
+        Gallery
     }
 
     public class Service
@@ -42,6 +43,10 @@ namespace ClientManager.Helpers
 
                 case Services.Matching:
                     _service = "matching";
+                    break;
+
+                case Services.Gallery:
+                    _service = "gallery";
                     break;
 
                 default:
