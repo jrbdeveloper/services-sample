@@ -22,6 +22,9 @@ namespace ServicesService.Models
                 case "matching":
                     return new MatchingService();
 
+                case "gallery":
+                    return new GalleryService();
+
                 default:
                     return new ClientService();
             }
