@@ -1,7 +1,6 @@
 ﻿using ClientManager.Helpers;
 using ClientManager.Models;
 using System.IO;
-using System.Web;
 using System.Web.Mvc;
 
 namespace ClientManager.Controllers
@@ -31,29 +30,16 @@ namespace ClientManager.Controllers
 
         public ActionResult Save(PropertyModel model)
         {
-            AddressModel address = null;
+            var address = SaveAddress(model);
+            var property = SaveProperty(model);
+            SaveGallery(model, property);
+
+            return RedirectToAction("Index", "Property");
+        }
+
+        private PropertyModel SaveProperty(PropertyModel model)
+        {
             PropertyModel property = null;
-
-            if (model.AddressId != null && model.AddressId > 0)
-            {
-                var serviceUri = Service.Get(Services.Address).Uri(model.AddressId);
-
-                if (Service.Update(serviceUri, model.Address))
-                {
-                    address = Service.GetItem<AddressModel>(serviceUri);
-                }
-            }
-            else
-            {
-                if(model.Address != null)
-                {
-                    address = Service.Post(Service.Get(Services.Address).Uri(), model.Address);
-                }
-                else
-                {
-                    address = new AddressModel();
-                }
-            }
 
             if (model.PropertyId > 0)
             {
@@ -69,24 +55,58 @@ namespace ClientManager.Controllers
                 property = Service.Post(Service.Get(Services.Property).Uri(), model);
             }
 
-            if (model.Photos != null && model.Photos.Length > 0)
-            {
-                foreach (var file in model.Photos)
-                {
-                    // Verify that the user selected a file
-                    if (file != null && file.ContentLength > 0)
-                    {
-                        // extract only the filename
-                        var fileName = Path.GetFileName(file.FileName);
+            return property;
+        }
 
-                        // store the file inside ~/App_Data/uploads folder
-                        var path = Path.Combine(Server.MapPath("~/Uploads"), fileName);
-                        file.SaveAs(path);
-                    }
+        private AddressModel SaveAddress(PropertyModel model)
+        {
+            AddressModel address = null;
+
+            if (model.AddressId != null && model.AddressId > 0)
+            {
+                var serviceUri = Service.Get(Services.Address).Uri(model.AddressId);
+
+                if (Service.Update(serviceUri, model.Address))
+                {
+                    address = Service.GetItem<AddressModel>(serviceUri);
+                }
+            }
+            else
+            {
+                if (model.Address != null)
+                {
+                    address = Service.Post(Service.Get(Services.Address).Uri(), model.Address);
+                }
+                else
+                {
+                    address = new AddressModel();
                 }
             }
 
-            return RedirectToAction("Index", "Property");
+            return address;
+        }
+
+        private void SaveGallery(PropertyModel model, PropertyModel property)
+        {
+            //if (model.Photo != null && model.Photo.Length > 0)
+            //{
+            //foreach (var file in model.Photos)
+            //{
+            if (model.Photo != null && model.Photo.ContentLength > 0)
+            {
+                var fileName = Path.GetFileName(model.Photo.FileName);
+                var path = Path.Combine(Server.MapPath("~/Uploads"), fileName);
+
+                model.Photo.SaveAs(path);
+
+                Service.Post(Service.Get(Services.Gallery).Uri(), new GalleryModel
+                {
+                    PropertyId = property.PropertyId,
+                    ImagePath = path
+                });
+            }
+                //}
+            //}
         }
 
         [HttpGet]

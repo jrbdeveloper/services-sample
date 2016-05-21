@@ -97,6 +97,12 @@ namespace GalleryService.Controllers
             return Ok(propertyGallery);
         }
 
+        [Route("api/Gallery/GetVersion")]
+        public string GetVersion()
+        {
+            return typeof(GalleryController).Assembly.GetName().Version.ToString();
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

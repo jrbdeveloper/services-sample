@@ -1,10 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations;
 using System.Web;
 
 namespace ClientManager.Models
 {
     public class PropertyModel
     {
+        private GalleryModel _gallery;
+
         public int PropertyId { get; set; }
 
         public int? AddressId { get; set; }
@@ -26,6 +29,20 @@ namespace ClientManager.Models
         [Display(Name = "Square Footage")]
         public int? SquareFootage { get; set; }
 
-        public HttpPostedFileBase[] Photos { get; set; }
+        [JsonIgnore]
+        public HttpPostedFileBase Photo { get; set; }
+
+        public GalleryModel Gallery
+        {
+            get
+            {
+                if (_gallery == null)
+                {
+                    _gallery = new GalleryModel();
+                }
+                return _gallery;
+            }
+            set { _gallery = value; }
+        }
     }
 }
