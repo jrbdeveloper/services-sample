@@ -99,11 +99,14 @@ namespace ClientManager.Controllers
 
                 model.Photo.SaveAs(path);
 
-                Service.Post(Service.Get(Services.Gallery).Uri(), new GalleryModel
+                var gallery = new GalleryModel
                 {
+                    PropertyImageId = property.Gallery.PropertyImageId,
                     PropertyId = property.PropertyId,
                     ImagePath = path
-                });
+                };
+
+                Service.Post(Service.Get(Services.Gallery).Uri(), gallery);
             }
                 //}
             //}

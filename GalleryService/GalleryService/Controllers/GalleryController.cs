@@ -33,19 +33,19 @@ namespace GalleryService.Controllers
 
         // PUT: api/Gallery/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutPropertyGallery(int id, PropertyGallery propertyGallery)
+        public IHttpActionResult PutPropertyGallery(int id, PropertyGallery gallery)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != propertyGallery.PropertyImageId)
+            if (id != gallery.PropertyImageId)
             {
                 return BadRequest();
             }
 
-            db.Entry(propertyGallery).State = EntityState.Modified;
+            db.Entry(gallery).State = EntityState.Modified;
 
             try
             {
@@ -68,17 +68,17 @@ namespace GalleryService.Controllers
 
         // POST: api/Gallery
         [ResponseType(typeof(PropertyGallery))]
-        public IHttpActionResult PostPropertyGallery(PropertyGallery propertyGallery)
+        public IHttpActionResult PostPropertyGallery(PropertyGallery gallery)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.PropertyGalleries.Add(propertyGallery);
+            db.PropertyGalleries.Add(gallery);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = propertyGallery.PropertyImageId }, propertyGallery);
+            return CreatedAtRoute("DefaultApi", new { id = gallery.PropertyImageId }, gallery);
         }
 
         // DELETE: api/Gallery/5

@@ -138,6 +138,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Gallery.cs">
+      <DependentUpon>GalleryModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\GalleryModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -152,9 +155,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GalleryModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PropertyGallery.cs">
-      <DependentUpon>GalleryModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

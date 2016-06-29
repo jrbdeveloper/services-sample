@@ -25,6 +25,6 @@ namespace GalleryService.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<PropertyGallery> PropertyGalleries { get; set; }
+        public virtual DbSet<Gallery> Galleries { get; set; }
     }
 }

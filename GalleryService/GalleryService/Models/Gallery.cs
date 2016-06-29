@@ -12,9 +12,9 @@ namespace GalleryService.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class PropertyGallery
+    public partial class Gallery
     {
-        public int PropertyImageId { get; set; }
+        public int GalleryId { get; set; }
         public int PropertyId { get; set; }
         public string ImagePath { get; set; }
     }
