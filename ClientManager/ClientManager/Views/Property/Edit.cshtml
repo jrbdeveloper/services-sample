@@ -66,16 +66,29 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Photos[0], htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <input type="file" name="Photos" id="@Model.Photos[0]" />
-                <input type="file" name="Photos" id="@Model.Photos[1]" />
-                <input type="file" name="Photos" id="@Model.Photos[2]" />
-                <input type="file" name="Photos" id="@Model.Photos[3]" />
-                <input type="file" name="Photos" id="@Model.Photos[4]" />
-            </div>
+            @if (Model.Images.Any())
+            {
+                @Html.LabelFor(model => model.Images[0], htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <input type="file" name="Images" id="@Model.Images[0]" />
+                    <input type="file" name="Images" id="@Model.Images[1]" />
+                    <input type="file" name="Images" id="@Model.Images[2]" />
+                    <input type="file" name="Images" id="@Model.Images[3]" />
+                    <input type="file" name="Images" id="@Model.Images[4]" />
+                </div>
+            }
+            else {
+                <label class="control-label col-md-2">Images</label>
+                <div class="col-md-10">
+                    <input type="file" name="Images" id="Images[0]" />
+                    <input type="file" name="Images" id="Images[1]" />
+                    <input type="file" name="Images" id="Images[2]" />
+                    <input type="file" name="Images" id="Images[3]" />
+                    <input type="file" name="Images" id="Images[4]" />
+                </div>
+            }
         </div>
-
+        
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-default" }) | 

@@ -88,28 +88,28 @@ namespace ClientManager.Controllers
 
         private void SaveGallery(PropertyModel model, PropertyModel property)
         {
-            //if (model.Photo != null && model.Photo.Length > 0)
-            //{
-            //foreach (var file in model.Photos)
-            //{
-            if (model.Photo != null && model.Photo.ContentLength > 0)
+            if (model.Images != null)
             {
-                var fileName = Path.GetFileName(model.Photo.FileName);
-                var path = Path.Combine(Server.MapPath("~/Uploads"), fileName);
-
-                model.Photo.SaveAs(path);
-
-                var gallery = new GalleryModel
+                foreach (var file in model.Images)
                 {
-                    PropertyImageId = property.Gallery.PropertyImageId,
-                    PropertyId = property.PropertyId,
-                    ImagePath = path
-                };
+                    if (file != null && file.ContentLength > 0)
+                    {
+                        var fileName = Path.GetFileName(file.FileName);
+                        var path = Path.Combine(Server.MapPath("~/Uploads"), fileName);
 
-                Service.Post(Service.Get(Services.Gallery).Uri(), gallery);
+                        file.SaveAs(path);
+
+                        var gallery = new GalleryModel
+                        {
+                            //PropertyImageId = property.Gallery.PropertyImageId,
+                            PropertyId = model.PropertyId,
+                            ImagePath = path
+                        };
+
+                        Service.Post(Service.Get(Services.Gallery).Uri(), gallery);
+                    }                   
+                }
             }
-                //}
-            //}
         }
 
         [HttpGet]

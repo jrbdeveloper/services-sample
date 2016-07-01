@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Web;
 
@@ -7,6 +8,7 @@ namespace ClientManager.Models
     public class PropertyModel
     {
         private GalleryModel _gallery;
+        private List<HttpPostedFileBase> _images;
 
         public int PropertyId { get; set; }
 
@@ -32,6 +34,20 @@ namespace ClientManager.Models
         [JsonIgnore]
         public HttpPostedFileBase Photo { get; set; }
 
+        public List<HttpPostedFileBase> Images
+        {
+            get
+            {
+                if (_images == null)
+                {
+                    _images = new List<HttpPostedFileBase>();
+                }
+                return _images;
+            }
+
+            set { _images = value; }
+        }
+
         public GalleryModel Gallery
         {
             get
@@ -42,6 +58,7 @@ namespace ClientManager.Models
                 }
                 return _gallery;
             }
+
             set { _gallery = value; }
         }
     }
